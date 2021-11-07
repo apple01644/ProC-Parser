@@ -1,0 +1,59 @@
+/*
+프로그램명: 업무원가 데이터 작성
+소스프로그렘 adadagbgdfgwrwqerfwef
+*/
+
+int a = 0;
+
+EXEC INCLUDE PMS_HEADER.H;
+
+#include <stdio.h>
+#define SUCC 0
+#define FAIL -1
+
+\u0233;
+\U23041234;
+
+int pms_main(int argc, char* argv[]);
+int pms_init();
+int pms_logic();
+int pms_end();
+
+int pms_init(int argc, char* argv[]) {
+    int rc = 0;
+    if ((rc = pms_init()) != SUCC) {
+        return FAIL;
+    }
+    if ((rc = pms_logic()) != SUCC) {
+        return FAIL;
+    }
+    if ((rc = pms_end()) != SUCC) {
+        return FAIL;
+    }
+}
+
+int pms_init() {
+    float g = 0.5e-6.3;
+    char v = 'Hello,\tWorld!\n\0';
+    if (PMS_LOGIN() != SUCC) {
+        return FAIL;
+    }
+    return SUCC;
+}
+
+int pms_loop() {
+    char test[256];
+
+    EXEC SQL
+     SELECT "Hello World!" /* ? */
+         --NICE
+         INTO :test
+       FROM DUAL;
+
+    return SUCC;
+}
+
+int pms_end() {
+    printf("Program ended well");
+    return SUCC;
+}
