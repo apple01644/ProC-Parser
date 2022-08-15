@@ -1,0 +1,20 @@
+SELECT -- 종합수익성 시스템 업부원가 율 조회
+       FIELD_00
+     , FIELD_01
+     , FIELD_02
+     , FIELD_03
+     , FIELD_04
+     , FIELD_05
+     , FIELD_06
+     , FIELD_07
+     , FIELD_08 * 100 "FIELD_08"
+     , LPAD(FIELD_09, 3, '9')
+     , TO_CHAR(FIELD_10, 'YYYYMMDD') AS FIELD_10
+  FROM INPBMC_D.TB_BMDA_DBTABLE_A a /* 테이블 1 */
+     , INPBMC_D.TB_BMDA_DBTABLE_B b /* 테이블 2 */
+ WHERE a.CRDT = '%%[GL_PN_CRDT]' || '01'
+   AND b.ROWID = c.ROWID
+   AND b.TDT BETWEEN TO_CHAR(TO_DATE(a.CRDT, 'YYYYMMDD'), 'YYYYMM') || '01'
+                 AND TO_CHAR(LAST_DAY(TO_DATE(a.CRDT, 'YYYYMMDD'), 'YYYYMMDD'))
+ UNION ALL
+ SELECT 1 FROM DUAL
