@@ -1,3 +1,4 @@
+import hashlib
 import json
 import os
 import random
@@ -24,10 +25,15 @@ class MainProgram:
         self.deck: List[Tuple[Quest, int]] = list()
 
         if self.stat_file.is_file() is True:
-            self.stat = json.loads(self.stat_file.read_text())
+            self.stat = {
+                int(k): v for k, v in json.loads(self.stat_file.read_text()).items()
+            }
+
+    def save(self):
+        self.stat_file.write_text(json.dumps(self.stat, indent=2))
 
     def __del__(self):
-        self.stat_file.write_text(json.dumps(self.stat, indent=2))
+        self.save()
 
     @property
     def files(self) -> List[Path]:
@@ -112,36 +118,43 @@ class MainProgram:
             if len(self.deck) == 0:
                 for quest in self.quests:
                     point = random.random() * 2
-                    desc_hash = hash(quest.desc)
+                    desc_hash = self.hash_into_number(quest.desc)
                     if desc_hash in self.stat:
                         point += self.stat[desc_hash]
-
                     self.deck.append((quest, point))
                 self.deck.sort(key=lambda tup: tup[1])
-            yield self.deck.pop(0)[0]
+            t = self.deck.pop(0)
+            yield t[0]
+
+    def hash_into_number(self, src: str) -> int:
+        result = hashlib.sha1(src.encode("utf-8"))
+        return int(result.hexdigest(), 16)
 
     def run(self):
         self.load_questions()
 
+        print(self.hash_into_number('123'))
+        print(self.hash_into_number('345'))
         for quest in self.get_quest():
             print('{:=^60s}'.format(' %s ' % quest.title))
+            print(self.hash_into_number(quest.desc))
             print(quest.desc)
 
             while True:
                 raw_answer = input('>> ')
                 if len(raw_answer) > 0:
                     break
-            if raw_answer == '1':
+            if raw_answer in ('1', ']'):
                 print('>> 예')
                 answer = True
-            elif raw_answer == '2':
+            elif raw_answer in ('2', '['):
                 answer = False
                 print('>> 아니요')
             else:
                 answer = None
                 print(f'>> 기권({raw_answer})')
 
-            desc_hash = hash(quest.desc)
+            desc_hash = self.hash_into_number(quest.desc)
             if desc_hash not in self.stat:
                 self.stat[desc_hash] = 0
 
