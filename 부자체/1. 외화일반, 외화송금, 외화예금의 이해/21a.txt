@@ -1,0 +1,15 @@
+외화 Buy&Sell 은 개인(외국인 제외) 모두 이용 가능하다.true
+외화 Buy&Sell 은 국민인 거주자면 모두 이용 가능하다.false
+외화 Buy&Sell 은 거주자면 모두 이용 가능하다.false
+외화 Buy&Sell 은 USD, JPY, EUR, CNY 통화로 거래 가능하다.true
+외화 Buy&Sell 은 USD, JPY, EUR, GBP, CHF 통화로 거래 가능하다.false
+외화 Buy&Sell 은 USD, JPY, EUR 통화로 거래 가능하다.false
+실시간 Buy&Sell은 전신환매매율을 70% 우대한다.true
+희망환율 Buy&Sell은 전신환매매율을 50% 우대한다.true
+실시간 Buy&Sell은 전신환매매율을 50% 우대한다.false
+희망환율 Buy&Sell은 전신환매매율을 70% 우대한다.false
+실시간 Buy&Sell은 최소 미화 50불 부터 거래 가능하다.true
+희망환율 Buy&Sell은 최소 미화 100불 부터 거래 가능하다.true
+실시간 Buy&Sell은 최소 미화 100불 부터 거래 가능하다.false
+희망환율 Buy&Sell은 최소 미화 50불 부터 거래 가능하다.false
+외화 Buy&Sell로 입금된 외화금액을 현찰로 인출 시 현찰수수료가 징수될 수 있다.

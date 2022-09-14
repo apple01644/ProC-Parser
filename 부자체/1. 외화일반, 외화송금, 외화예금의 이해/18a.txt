@@ -1,0 +1,9 @@
+LIBOR-USD 금리는 Term SOFR로 대체되었다.true
+LIBOR-JPY 금리는 TIBOR로 대체되었다.true
+LIBOR-EUR 금리는 EURIBOR로 대체되었다.true
+LIBOR-GBP 금리는 Deposit Rate로 대체되었다.true
+LIBOR-CHF 금리는 Deposit Rate로 대체되었다.true
+LIBOR-USD 금리는 TIBOR로 대체되었다.false
+LIBOR-JPY 금리는 Term SOFR로 대체되었다.false
+LIBOR-GBP 금리는 EURIBOR로 대체되었다.false
+LIBOR-CHF 금리는 EURIBOR로 대체되었다.false

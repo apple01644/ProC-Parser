@@ -1,0 +1,14 @@
+For You 외화적금의 가입기간은 1개월~12개월이다.true
+Plus You 외화적금의 가입기간은 1개월~36개월이다.true
+For You 외화적금의 가입기간은 1개월~36개월이다.false
+Plus You 외화적금의 가입기간은 1개월~12개월이다.false
+For You/Plus You 외화적금은 최대 미화 1백만불 까지 가입 가능하다.true
+For You/Plus You 외화적금은 추가입금이 가능하다.
+For You/Plus You 외화적금은 일부해지가 입금 건별 3회 가능하다(최소 미화 1백불).true
+For You/Plus You 외화적금은 일부해지가 입금 건별 3회 가능하다(금액 제한 없음).false
+For You 외화적금은 일부해지 시 입금 건별 로 고시된 약정금리를 적용한다.true
+Plus You 외화적금은 일부해지 시 중도해지금리를 적용한다.true
+Plus You 외화적금은 일부해지 시 입금 건별 로 고시된 약정금리를 적용한다.false
+For You 외화적금은 일부해지 시 중도해지금리를 적용한다.false
+Plus You 외화적금은 자동 재예치가 가능하나 For You 외화적금은 불가하다.true
+Plus You 외화적금은 자동 재예치가 불가하나 For You 외화적금은 가능하다.false

@@ -4,7 +4,7 @@ import os
 import random
 from dataclasses import dataclass
 from pathlib import Path
-from typing import List, Optional, Dict, Iterable
+from typing import List, Optional, Dict, Iterable, Tuple
 
 
 @dataclass
@@ -52,8 +52,9 @@ class MainProgram:
             ('된다.', '되지 아니한다.'),
             ('본다.', '보지 아니한다.'),
             ('있다.', '있지 않다.'),
+            ('포함한다.', '제외한다.'),
+            ('한다.', '하지 않는다.'),
             ('가능하다.', '불가하다.'),
-            ('인정한다.', '인정하지 않는다.'),
         ]
 
         for file in self.files:
@@ -167,7 +168,7 @@ class MainProgram:
             else:
                 print(f'기권하였습니다.')
                 self.stat[desc_hash] -= 0.5
-            pass
+            self.save()
 
 
 if __name__ == '__main__':
