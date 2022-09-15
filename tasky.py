@@ -112,7 +112,7 @@ class MainProgram:
                         else:
                             pass
                     else:
-                        raise ValueError(line)
+                        raise ValueError((file, line))
 
     def get_quest(self) -> Iterable[Quest]:
         while True:
